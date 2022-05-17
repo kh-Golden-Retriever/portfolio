@@ -14,11 +14,6 @@ Rails 6.0.5
 node v15.14.0
 yarn 1.22.17
 
-・ActiveStorage
-・ImageMagick
-・MiniMagick
-・ImageProcessing
-
 ## サービス概要
 
 コミュニティ・フリーマーケット

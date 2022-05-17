@@ -1,14 +1,19 @@
+## 画面遷移図
+
+https://www.figma.com/file/k6HIjQdRzYpwbm3FgFN297/Flowcharts-Web?node-id=0%3A1
+
+## ER図
+
+https://drive.google.com/file/d/1SdvmUoUEO0hZty7Lgw9l8mDQxew5EVtv/view?usp=sharing
+
+
+
 ## 開発環境
 
 ruby 2.6.5p114 (2019-10-01 revision 67812) [-darwin21]
 Rails 6.0.5
 node v15.14.0
 yarn 1.22.17
-
-・ActiveStorage
-・ImageMagick
-・MiniMagick
-・ImageProcessing
 
 ## サービス概要
 

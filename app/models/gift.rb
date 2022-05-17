@@ -1,3 +1,3 @@
 class Gift < ApplicationRecord
-  enum status: {0:draft, 1:display, 2:undisplay, 3:done_deal}
+  enum status: {draft:0, display:1, undisplay:2, done_deal:3}
 end

@@ -2,7 +2,7 @@ class GiftsController < ApplicationController
   before_action :set_current_user_gift, only: %i[ edit update destroy ]
 
   def index
-    @gifts = Gift.all
+    @gifts = Gift.all.includes(:user)
   end
 
   def show
@@ -10,7 +10,7 @@ class GiftsController < ApplicationController
   end
 
   def new
-    @gift = Gift.new
+    @gift = current_user.gift.new
   end
 
   def edit

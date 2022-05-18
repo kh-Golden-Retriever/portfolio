@@ -9,18 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @gifts.each do |gift| %>
-        <tr>
-          <td><%= gift.title %></td>
-          <td><%= gift.description %></td>
-          <td><%= gift.how_to_give %></td>
-          <td><%= gift.price %></td>
-          <td><%= gift.status %></td>
-          <td><%= link_to 'Show', gift %></td>
-          <td><%= link_to 'Edit', edit_gift_path(gift) %></td>
-          <td><%= link_to 'Destroy', gift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
+      <%=render 'gifts', gifts: @gifts%>
     </tbody>
   </table>
   <br>

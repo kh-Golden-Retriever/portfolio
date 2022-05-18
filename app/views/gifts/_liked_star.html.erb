@@ -1,0 +1,3 @@
+<%= link_to gift_likes_path(gift_id: gift.id),id:"js-like-handle-button-#{gift.id}" , method: :delete , remote: true do %>
+  <i class="fas fa-star"></i>
+<% end %>

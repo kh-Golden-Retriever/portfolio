@@ -44,6 +44,7 @@ class GiftsController < ApplicationController
   end
 
   private
+  
     def set_current_user_gift
       @gift = current_user.gifts.find(params[:id])
     end

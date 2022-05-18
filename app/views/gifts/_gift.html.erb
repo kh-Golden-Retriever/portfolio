@@ -1,6 +1,6 @@
 <div class="col">
   <div class="card h-100">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><%= gift.title %></h5>
       <div>
@@ -12,6 +12,14 @@
         <br>
         <%= gift.user.name %>
         <%= gift.user.email %>
+        <br>
+        <% unless current_user.my_gift?(gift) %>
+          <% if current_user.liked?(gift) %>
+            <%= render 'liked_star', gift: gift %>
+          <% else %>
+            <%= render 'unliked_star', gift: gift %>
+          <% end %>
+        <% end %>
         <%= link_to 'Show', gift %>
         <%= link_to 'Edit', edit_gift_path(gift) %>
         <%= link_to 'Destroy', gift, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -13,4 +13,14 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   enum role: {user: 0, admin: 1}
+
+
+  def my_gift?(gift)
+    gifts.include?(gift)
+  end
+
+  def liked?(gift)
+    like_gifts.include?(gift)
+  end
+
 end

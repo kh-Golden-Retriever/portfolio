@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
-  root to: 'gifts#index'
+  root 'landing_pages#top'
   
   get 'login' ,to:'user_sessions#new'
   post 'login' ,to:'user_sessions#create'

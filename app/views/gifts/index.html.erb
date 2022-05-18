@@ -1,16 +1,5 @@
 <h1>Index</h1>
-<p id="notice"><%= notice %></p>
-<h1>Gifts<span><i class="fa fa-star-o"><i class="fa fa-star"></i></span></h1>
-  <i class="fa fa-clock-o"></i>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%=render 'gifts', gifts: @gifts%>
-    </tbody>
-  </table>
-  <br>
-  <%= link_to 'New Gift', new_gift_path %>
+<h1>Gifts</h1>
+<%=render 'gifts', gifts: @gifts%>
+<br>
+<%= link_to 'New Gift', new_gift_path %>

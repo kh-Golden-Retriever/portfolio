@@ -1,12 +1,14 @@
 class LikesController < ApplicationController
+  before_action :set_gift, only: %i[ create destroy ]
+
   def create
     if @gift.user_id != current_user.id
-      @like = Like.create!(user_id: current_user.id, gift_id: @gift.id)
+      Like.create!(user_id: current_user.id, gift_id: @gift.id)
     end
   end
 
   def destroy
-    @like = @gift.likes.find(current_user.id)
+    @like = @gift.likes.find_by(user_id: current_user.id)
     @like.destroy!
   end
 

@@ -1,48 +1,54 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: %i[ show edit update destroy ]
+  before_action :set_current_user_gift, only: %i[ edit update destroy ]
 
-  # GET /gifts or /gifts.json
   def index
     @gifts = Gift.all
   end
 
-  # GET /gifts/1 or /gifts/1.json
   def show
+    @gift = Gift.find(params[:id])
   end
 
-  # GET /gifts/new
   def new
     @gift = Gift.new
   end
 
-  # GET /gifts/1/edit
   def edit
   end
 
-  # POST /gifts or /gifts.json
   def create
-    @gift = Gift.new(gift_params)
-
+    @gift = current_user.gifts.new(gift_params)
+    if @gift.save
+      flash[:success] = 'success'
+      redirect_to gifts_path
+    else
+      flash.now[:danger] = 'failed'
+      render :new
+    end
   end
 
-  # PATCH/PUT /gifts/1 or /gifts/1.json
   def update
+    if @gift.update(gift_params)
+      flash[:success] = 'success'
+      redirect_to gift_path(@gift)
+    else
+      flash.now[:danger] = 'failed'
+      render :edit
+    end
+
   end
 
-  # DELETE /gifts/1 or /gifts/1.json
   def destroy
-    @gift.destroy
-
+    @gift.destroy!
+    redirect_to gifts_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gift
-      @gift = Gift.find(params[:id])
+    def set_current_user_gift
+      @gift = current_user.gifts.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def gift_params
-      params.require(:gifts).permit()
+      params.require(:gift).permit(:title, :description, :category, :how_to_give, :price, :status)
     end
 end

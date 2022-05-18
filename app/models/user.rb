@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  has_many :gifts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_gifts, through: :likes, source: :gift
+
   validates :name, presence: true
   validates :email, uniqueness: true, presence: true
 

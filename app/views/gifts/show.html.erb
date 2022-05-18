@@ -1,4 +1,15 @@
+<h1>Show</h1>
 <p id="notice"><%= notice %></p>
-
+<tr>
+  <td><span><i class="bi bi-star"></i></span></td>
+  <td><%= @gift.title %></td>
+  <td><%= @gift.description %></td>
+  <td><%= @gift.how_to_give %></td>
+  <td><%= @gift.price %></td>
+  <td><%= @gift.status %></td>
+  <td><%= link_to 'Show', @gift %></td>
+  <td><%= link_to 'Edit', edit_gift_path(@gift) %></td>
+  <td><%= link_to 'Destroy', gift_path(@gift), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
 <%= link_to 'Edit', edit_gift_path(@gift) %> |
 <%= link_to 'Back', gifts_path %>

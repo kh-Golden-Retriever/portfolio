@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: %i[ edit update destroy ]
+  before_action :set_current_user_gift, only: %i[ edit update destroy ]
 
   def index
     @gifts = Gift.all
@@ -44,7 +44,7 @@ class GiftsController < ApplicationController
   end
 
   private
-    def set_gift
+    def set_current_user_gift
       @gift = current_user.gifts.find(params[:id])
     end
 

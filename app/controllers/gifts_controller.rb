@@ -19,7 +19,7 @@ class GiftsController < ApplicationController
   def create
     @gift = current_user.gifts.new(gift_params)
     if @gift.save
-      flash[:success] = 'success!'
+      flash[:success] = 'success'
       redirect_to gifts_path
     else
       flash.now[:danger] = 'failed'
@@ -29,7 +29,7 @@ class GiftsController < ApplicationController
 
   def update
     if @gift.update(gift_params)
-      flash[:success] = 'success!'
+      flash[:success] = 'success'
       redirect_to gift_path(@gift)
     else
       flash.now[:danger] = 'failed'

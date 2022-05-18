@@ -17,6 +17,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
+    flash[:success] = 'success'
     redirect_to login_path
   end
 

@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'success!'
+      flash[:success] = 'success'
       redirect_to login_path
     else
-      flash.now[:danger] = 'failed!'
+      flash.now[:danger] = 'failed'
       render :new
     end
   end

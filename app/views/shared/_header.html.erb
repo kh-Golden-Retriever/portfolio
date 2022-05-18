@@ -1,4 +1,3 @@
-  
 <header>
   <nav class="navbar navbar-expand-lg bg-brown font-white">
     <div class="container-fluid">
@@ -17,6 +16,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link white" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'logout', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'} ,class:'nav-link white'%>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

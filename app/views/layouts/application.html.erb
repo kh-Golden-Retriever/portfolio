@@ -4,10 +4,9 @@
     <title>Techpitgram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# ここに追加 %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <header>
@@ -15,6 +14,7 @@
     </header>
     <%= yield %>
     <footer>
+      <%=render 'shared/footer'%>
     </footer>
   </body>
 </html>

@@ -10,7 +10,7 @@ class GiftsController < ApplicationController
   end
 
   def new
-    @gift = current_user.gift.new
+    @gift = current_user.gifts.new
   end
 
   def edit
@@ -19,10 +19,10 @@ class GiftsController < ApplicationController
   def create
     @gift = current_user.gifts.new(gift_params)
     if @gift.save
-      flash[:success] = 'success'
+      flash[:success] = 'success!'
       redirect_to gifts_path
     else
-      flash.now[:danger] = 'failed'
+      flash.now[:danger] = 'failed!'
       render :new
     end
   end

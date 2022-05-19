@@ -34,6 +34,7 @@ group :development, :test do
 end
 
 gem 'pry-rails'
+gem 'pry-byebug'
 
 
 
@@ -62,5 +63,5 @@ gem 'sorcery'
 gem 'bootstrap', '~> 4.4.1'
 gem 'font-awesome-sass', '~> 5.12.0'
 
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'draper', '3.1.0'

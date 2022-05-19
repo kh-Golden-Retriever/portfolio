@@ -5,6 +5,7 @@ class LikesController < ApplicationController
     if @gift.user_id != current_user.id
       Like.create!(user_id: current_user.id, gift_id: @gift.id)
     end
+    @aaa = 'iuiuh'
   end
 
   def destroy

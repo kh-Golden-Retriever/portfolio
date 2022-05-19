@@ -1,5 +1,6 @@
 <div>
   <%=form_with model: user, local: true do |f|%>
+    <%= render 'shared/error_message', obj: user %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ edit update destroy ]
+  before_action :set_current_user, only: %i[ edit update ]
   skip_before_action :require_login, only: %i[ new create ]
 
   def new
@@ -18,11 +18,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-  
   end
 
   def destroy
@@ -30,7 +28,7 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
+  def set_current_user
     @user = current_user
   end
 

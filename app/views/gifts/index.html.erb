@@ -1,5 +1,13 @@
 <h1>Index</h1>
 <h1>Gifts</h1>
-<%=render 'gifts', gifts: @gifts%>
+<div class="row row-3 col-4 row-cols-md-3 g-4">
+  <% if @gifts.present? %>
+    <%= render @gifts %>
+  <% else %>
+    <p>
+      No gifts
+    </p>
+  <% end %>
+</div>
 <br>
 <%= link_to 'New Gift', new_gift_path %>

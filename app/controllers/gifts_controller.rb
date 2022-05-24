@@ -2,11 +2,14 @@ class GiftsController < ApplicationController
   before_action :set_current_user_gift, only: %i[ edit update destroy ]
 
   def index
-    @gifts = Gift.all.includes(:user)
+    @q = Gift.ransack(params[:q])
+    @gifts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def show
     @gift = Gift.find(params[:id])
+    @comment = Comment.new
+    @comments = @gift.comments.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -40,7 +43,7 @@ class GiftsController < ApplicationController
 
   def destroy
     @gift.destroy!
-    redirect_to gifts_path
+    redirect_to  gifts_path
   end
 
   private
@@ -50,6 +53,6 @@ class GiftsController < ApplicationController
     end
 
     def gift_params
-      params.require(:gift).permit(:title, :description, :category, :how_to_give, :price, :status)
+      params.require(:gift).permit(:title, :description, :category, :how_to_give, :price, :status,{ images: [] })
     end
 end

@@ -12,6 +12,8 @@
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
+/app/assets/images
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -34,3 +36,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

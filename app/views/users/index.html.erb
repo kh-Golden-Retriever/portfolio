@@ -1,0 +1,27 @@
+<div class="row mt-5">
+  <div class="col-1 text-center">
+    <%= link_to :back do %>
+      <i class="fas fa-angle-left fs-2 brown"></i>
+    <% end %>
+  </div>
+  <br>
+  <div class="col-10">
+    <div class="container">
+      <h1 class='light-brown'><%='ユーザー一覧'%></h1>
+      <%= render 'shared/user_search_form', url: commnunity_users_path %>
+      <table class="table table-hover align-middle">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 25%">アバター</th>
+            <th scope="col" style="width: 25%">名前</th>
+            <th scope="col" style="width: 25%">メール</th>
+            <th scope="col" style="width: 25%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

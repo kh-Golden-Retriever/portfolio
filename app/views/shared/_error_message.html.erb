@@ -1,9 +1,11 @@
-<% if obj.errors.any? %>
-  <% obj.errors.full_messages.each do |message| %>
-    <ul class="list-group">
-      <li class="list-group-item list-group-item-danger">
-        <%= message %>
-      </li>
-    </ul>
+<div id="js-error-message">
+  <% if obj.errors.any? %>
+    <% obj.errors.full_messages.each do |message| %>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-danger">
+          <%= message %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
+</div>

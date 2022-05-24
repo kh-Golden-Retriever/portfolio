@@ -1,2 +1,66 @@
-<h1>LandingPages#top</h1>
-<p>Find me in app/views/landing_pages/top.html.erb</p>
+<div class="container">
+  <div class="text-center mt-5 pt-3">
+    <h1 class="brown m-5">あなたのGiveが<br>
+      コミュニティを強くする。
+    </h1>
+    <h2 class="light-brown m-5 pt-5">あなたの成長を支えてきた本やデバイスたち。<br>
+      <br>
+      きっと仲間にとっても価値あるものになるはず。<br>
+      <br>
+      あなたのGiftで誰かの成長を作りましょう。</h2>
+  </div>
+  <div class="text-center mb-5 pb-5">
+    <%= link_to 'ログイン', login_path,class:'btn btn-lg btn-outline-wine-red px-5 mx-3' %>
+    <%= link_to 'ユーザー登録へ', new_user_path,class:'btn btn-lg btn-fill-wine-red  mx-3' %>
+  </div>
+  <div class="container light-brown">
+    <div class="row align-items-center mb-5">
+      <div class="col-6 d-flex justify-content-center">
+        <%= image_tag 'landing-people.jpg', size: '480x300' %>
+      </div>
+      <div class="col-6">
+        <h3>
+          「Give To...」はコミュニティ限定のフリマアプリです。
+        </h3>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-6 d-flex justify-content-center">
+        <%= image_tag 'landing-gift.jpg', size: '480x300' %>
+      </div>
+      <div class="col-6">
+        <h3>
+          あなたを支えてきたアイテムは「Gift」となって仲間の成長を支えます。
+        </h3>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-6 d-flex justify-content-center">
+        <%= image_tag 'landing-books.jpg', size: '480x300' %>
+      </div>
+      <div class="col-6">
+        <h3>
+          例えば、役割を終えたビジネス書や技術書や...
+        </h3>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-6 d-flex justify-content-center">
+        <%= image_tag 'landing-device.jpg', size: '480x300' %>
+      </div>
+      <div class="col-6">
+        <h3>
+          デバイスやパソコン周辺機器が、隣の仲間の成長を作るでしょう。
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="brown text-center m-5 p-5">
+    <h1>あなたのGiveで
+      コミュニティの成長を作りましょう。</h1>
+  </div>
+  <div class="text-center mb-5 pb-5">
+    <%= link_to 'ログイン', login_path,class:'btn btn-lg btn-outline-wine-red px-5 mx-3' %>
+    <%= link_to 'ユーザー登録へ', new_user_path,class:'btn btn-lg btn-fill-wine-red  mx-3' %>
+  </div>
+</div>

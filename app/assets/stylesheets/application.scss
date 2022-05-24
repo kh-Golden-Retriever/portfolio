@@ -1,27 +1,104 @@
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+* {
+	margin:0; padding:0; 		/*全要素のマージン・パディングをリセット*/
+}
+
+.light-brown {
+  color:#D3B69C;
+}
+
+.bg-light-brown {
+  background:#D3B69C;
+}
+
+.brown {
+  color:#806D5C;
+}
 
 .bg-brown {
-  background-color: #806D5C; 
+  background:#806D5C;
 }
 
 .white{
   color:white;
 }
 
-.font-light-brown{
-  color:#D3B69C;
+.outline-light-brown{
+  border: 1px solid #D3B69C;
+  border-radius:3px;
 }
-
 
 .btn-outline-wine-red {
+  background: #FFFFFF;
   border: 3px solid #9C343B;
-  color: #9C343B
+  border-radius: 5px;
+  color: #9C343B;
+  font-weight:bold;
 }
 
-.btn-wine-red {
-  color:white;
-  background: #9C343B;
+.btn-fill-wine-red {
+  background:#9C343B;
+  border: 3px solid #9C343B;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight:bold;
 }
+
+.footer {
+  // position: absolute;
+  margin-top: 100px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  display:flex;
+  align-items:center;
+  background-color: #f5f5f5;
+  }
+
+
+  @media (min-width: 991.98px) {
+    main {
+    padding-left: 240px;
+    }
+    }
+    
+    header {
+      margin: 0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+    // position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0; /* Height of navbar */
+    z-index: 2;
+    height: 100%;
+    }
+    
+    @media (max-width: 991.98px) {
+    .sidebar {
+    width: 100%;
+    }
+    }
+    .sidebar .active {
+    border-radius: 5px;
+    }
+    
+    .sidebar-sticky {
+    position: relative;
+    top: 0;
+    // height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+    

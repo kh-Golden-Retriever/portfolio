@@ -1,28 +1,41 @@
-<div class="col">
+<div class="col-3">
   <div class="card h-100">
-    <img src="" class="card-img-top" alt="...">
+    <% if gift.images.any? %>
+      <%= image_tag gift.images.first.to_s, class:"card-img-top" %>
+    <% else %>
+      <%= image_tag 'gift_default_image' %>
+    <% end %>
     <div class="card-body">
       <h5 class="card-title"><%= gift.title %></h5>
-      <div>
-        <%= gift.description %>
-        <%= gift.how_to_give %>
-        <%= gift.price %>
-        <%= gift.status %>
-        <%= gift.created_at.strftime('%-m/%d %H:%M') %>
-        <br>
-        <%= gift.user.name %>
-        <%= gift.user.email %>
-        <br>
-        <% unless current_user.my_gift?(gift) %>
-          <% if current_user.liked?(gift) %>
-            <%= render 'liked_star', gift: gift %>
-          <% else %>
-            <%= render 'unliked_star', gift: gift %>
-          <% end %>
-        <% end %>
-        <%= link_to 'Show', gift %>
-        <%= link_to 'Edit', edit_gift_path(gift) %>
-        <%= link_to 'Destroy', gift, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="card-text">
+        <ul class="list-unstyled">
+          <li>
+            <%= gift.description %>
+          </li>
+          <li>
+            <%= gift.price %>
+          </li>
+          <li>
+            <%= gift.created_at.strftime('%-m/%d %H:%M') %>
+          </li>
+          <li>
+            <%= link_to  user_path(gift.user) do %>
+              <%= gift.user.name %>
+            <% end %>
+          </li>
+          <li>
+            <% unless current_user.my_gift?(gift) %>
+              <% if current_user.liked?(gift) %>
+                <%= render 'liked_star', gift: gift %>
+              <% else %>
+                <%= render 'unliked_star', gift: gift %>
+              <% end %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'Show', gift %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

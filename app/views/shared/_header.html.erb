@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-brown font-white">
+  <nav class="navbar navbar-expand-lg bg-brown white">
     <div class="container-fluid">
       <%=link_to root_path ,class:'navbar-brand' do%>
         <%= image_tag 'logo_without_text.png', size:'32x28' %>
@@ -9,36 +9,27 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <%# <a class="" aria-current="page" href="#">Home</a> %>
-            <%= link_to 'Home', "#", class:"nav-link active white", "aria-current"=>"page" %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link white" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'logout', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'} ,class:'nav-link white'%>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-wine-red" type="submit">Search</button>
-        </form>
+        <% if logged_in? %>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to 'Gift一覧', gifts_path, class:"nav-link active white", "aria-current"=>"page" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'ユーザー一覧', users_path, class:"nav-link active white", "aria-current"=>"page" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'マイページ', mypage_path, class:"nav-link active white", "aria-current"=>"page" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'ログアウト', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'} ,class:'nav-link white'%>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 me-5 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to 'Giftを出品する', new_gift_path, class:'btn btn-fill-wine-red'%>
+            </li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </nav>

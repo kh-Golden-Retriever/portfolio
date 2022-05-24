@@ -1,5 +1,12 @@
 <h1>Show</h1>
 <p id="notice"><%= notice %></p>
+<% if @gift.images.any? %>
+  <% @gift.images.each do |image| %>
+    <%= image_tag image.to_s %>
+  <% end %>
+<% else %>
+  <%= image_tag 'gift_default_image' %>
+<% end %>
 <tr>
   <td><span><i class="bi bi-star"></i></span></td>
   <td><%= @gift.title %></td>
@@ -11,5 +18,7 @@
   <td><%= link_to 'Edit', edit_gift_path(@gift) %></td>
   <td><%= link_to 'Destroy', gift_path(@gift), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
+<%= render 'comments/form', { gift: @gift, comment: @comment }%>
+<%= render 'comments/comments',  {gift: @gift, comments: @comments}  %>
 <%= link_to 'Edit', edit_gift_path(@gift) %> |
 <%= link_to 'Back', gifts_path %>

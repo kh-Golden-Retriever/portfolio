@@ -1,0 +1,5 @@
+<table class="table table-primary" id="js-comments-list">
+  <% comments.each do |comment| %>
+  <%= render 'comments/comment', {gift: gift, comment: comment} %>
+  <% end %>
+</table>

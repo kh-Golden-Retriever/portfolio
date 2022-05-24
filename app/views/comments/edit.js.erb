@@ -1,0 +1,2 @@
+$("#js-error-message").remove()
+$("#js-comment-item-<%=@comment.id%>").append("<td><%=j( render 'form', { gift: @gift, comment: @comment }) %></td>")

@@ -1,0 +1,10 @@
+<%= form_with model: @user, url: password_resets_path(@user) do |f| %>
+  <%= render 'shared/error_message', obj: @user %>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%=f.submit 'メールを送信', class: 'btn btn-primary'%>
+  </div>
+<% end %>

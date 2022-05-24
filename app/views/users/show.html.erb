@@ -1,0 +1,9 @@
+<% if @user.avatar.present? %>
+  <%= image_tag @user.avatar %>
+<% else %>
+  <%= image_tag 'avatar_default_image', size: '100x100'%>
+<% end %>
+<ul class="list list-group">
+  <li class="list-group-item"><%=@user.name%></li>
+  <li class="list-group-item"><%=@user.email%></li>
+</ul>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_17_014958) do
+ActiveRecord::Schema.define(version: 2022_05_24_133723) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2022_05_17_014958) do
     t.index ["user_id"], name: "index_done_deals_on_user_id"
   end
 
+  create_table "gift_communities", force: :cascade do |t|
+    t.integer "gift_id", null: false
+    t.integer "community_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_gift_communities_on_community_id"
+    t.index ["gift_id", "community_id"], name: "index_gift_communities_on_gift_id_and_community_id", unique: true
+    t.index ["gift_id"], name: "index_gift_communities_on_gift_id"
+  end
+
   create_table "gifts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
@@ -49,6 +59,9 @@ ActiveRecord::Schema.define(version: 2022_05_17_014958) do
     t.integer "status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.json "images"
+    t.integer "community_id", null: false
+    t.index ["community_id"], name: "index_gifts_on_community_id"
     t.index ["user_id"], name: "index_gifts_on_user_id"
   end
 
@@ -69,16 +82,30 @@ ActiveRecord::Schema.define(version: 2022_05_17_014958) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "user_communities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "community_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_user_communities_on_community_id"
+    t.index ["user_id", "community_id"], name: "index_user_communities_on_user_id_and_community_id", unique: true
+    t.index ["user_id"], name: "index_user_communities_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.integer "role", default: 0, null: false
-    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
+    t.string "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
+    t.integer "access_count_to_reset_password_page", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
   add_foreign_key "comments", "gifts"
@@ -86,6 +113,9 @@ ActiveRecord::Schema.define(version: 2022_05_17_014958) do
   add_foreign_key "communities", "users"
   add_foreign_key "done_deals", "gifts"
   add_foreign_key "done_deals", "users"
+  add_foreign_key "gift_communities", "communities"
+  add_foreign_key "gift_communities", "gifts"
+  add_foreign_key "gifts", "communities"
   add_foreign_key "gifts", "users"
   add_foreign_key "likes", "gifts"
   add_foreign_key "likes", "users"

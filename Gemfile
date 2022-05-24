@@ -65,3 +65,12 @@ gem 'font-awesome-sass', '~> 5.12.0'
 
 # gem 'jquery-rails'
 gem 'draper', '3.1.0'
+gem "mini_magick"
+gem 'carrierwave', '~> 2.0'
+gem 'ransack', '2.3.0'
+
+gem 'config', '2.0.0'
+
+group :development do
+  gem 'letter_opener_web'
+end

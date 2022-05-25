@@ -1,17 +1,24 @@
 class CommunitiesController < ApplicationController
   before_action :require_login
+  skip_before_action :set_current_community, only: %i[ new create ]
   
   def show
   end
 
   def new
-    @community = current_user.communities.new
+    @community = Community.new
   end
 
   def create
-    @community = current_user.communities.new(community_params)
+    @community = Community.new(community_params)
+    # コミュニティの製作者を入れる
+    @community.user_id = current_user.id
     if @community.save
-      redirect_to gifts_path(@community), success: 'success'
+      # コミュニティと紐付ける
+      @user_community = UserCommunity.create(user_id: current_user.id, community_id: @community.id)
+      # セッションに入れてcurrent_communityを使えるようにする
+      session[:community_id] = @community.id
+      redirect_to gifts_path, success: 'success'
     else
       flash.now[:danger] = 'failed'
       render :new

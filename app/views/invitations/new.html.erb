@@ -1,0 +1,35 @@
+<div class="container mx-auto mt-5 w-50 light-brown">
+  <h1 class="light-brown">
+    <%= "#{@community.name} に参加する"%>
+  </h1>
+  <%=form_with model: @user, url: invitations_path(uuid: @token.uuid), local: true do |f|%>
+    <%= render 'shared/error_message', obj: f.object %>
+    <div class='form-group mb-5'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control outline-light-brown'%>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.label :email %>
+      <%= f.text_field :email, class:'form-control outline-light-brown'%>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.label :password %>
+      <%= f.text_field :password, class:'form-control outline-light-brown'%>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.label :password_confirmation %>
+      <%= f.text_field :password_confirmation, class:'form-control outline-light-brown'%>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.label :avatar%>
+      <br>
+      <%= f.file_field :avatar, class:'form-control outline-light-brown' %>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.hidden_field :avatar_cache %>
+    </div>
+    <div  class='form-group mb-5'>
+      <%= f.submit '新規登録する', class:'btn btn-fill-wine-red'%>
+    </div>
+  <% end %>
+</div>

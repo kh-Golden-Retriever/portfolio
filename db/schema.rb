@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_133723) do
+ActiveRecord::Schema.define(version: 2022_05_25_054952) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2022_05_24_133723) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_communities_on_user_id"
+  end
+
+  create_table "community_tokens", force: :cascade do |t|
+    t.integer "community_id", null: false
+    t.string "uuid", null: false
+    t.datetime "expires_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_community_tokens_on_community_id"
   end
 
   create_table "done_deals", force: :cascade do |t|

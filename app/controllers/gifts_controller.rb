@@ -2,7 +2,7 @@ class GiftsController < ApplicationController
   before_action :set_current_user_gift, only: %i[ edit update destroy ]
 
   def index
-    @q = Gift.ransack(params[:q])
+    @q = @current_community.gifts.ransack(params[:q])
     @gifts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
@@ -21,7 +21,9 @@ class GiftsController < ApplicationController
 
   def create
     @gift = current_user.gifts.new(gift_params)
+    @gift.community_id = @current_community.id
     if @gift.save
+      @gift_community = GiftCommunity.create(gift_id: @gift.id, community_id: @current_community.id)
       flash[:success] = 'success!'
       redirect_to gifts_path
     else

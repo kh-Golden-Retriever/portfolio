@@ -8,6 +8,16 @@ Rails.application.routes.draw do
   delete 'logout' ,to:'user_sessions#destroy'
   resources :password_resets, only: %i[ new create edit update ]
   
+  get 'community_session' ,to:'community_sessions#new'
+  post 'community_session' ,to:'community_sessions#create'
+  delete 'community_session' ,to:'community_sessions#destroy'
+
+  resources :invitations, only: %i[ new create ] do
+    collection do
+      get 'generate_token'
+    end
+  end
+
   resources :communities
   resources :users
   resources :gifts

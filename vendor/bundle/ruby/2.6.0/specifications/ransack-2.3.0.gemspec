@@ -14,29 +14,43 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/activerecord-hackery/ransack".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9".freeze)
-  s.rubygems_version = "3.3.4".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "Object-based searching for Active Record and Mongoid (currently).".freeze
 
-  s.installed_by_version = "3.3.4" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
-  end
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<actionpack>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<activerecord>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<i18n>.freeze, [">= 0"])
-    s.add_runtime_dependency(%q<polyamorous>.freeze, ["= 2.3.0"])
-    s.add_development_dependency(%q<rspec>.freeze, ["~> 3"])
-    s.add_development_dependency(%q<machinist>.freeze, ["~> 1.0.6"])
-    s.add_development_dependency(%q<faker>.freeze, ["~> 0.9.5"])
-    s.add_development_dependency(%q<sqlite3>.freeze, ["~> 1.4.1"])
-    s.add_development_dependency(%q<pg>.freeze, ["~> 0.21"])
-    s.add_development_dependency(%q<mysql2>.freeze, ["= 0.3.20"])
-    s.add_development_dependency(%q<pry>.freeze, ["= 0.10"])
-    s.add_development_dependency(%q<byebug>.freeze, [">= 0"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<actionpack>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<activerecord>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<i18n>.freeze, [">= 0"])
+      s.add_runtime_dependency(%q<polyamorous>.freeze, ["= 2.3.0"])
+      s.add_development_dependency(%q<rspec>.freeze, ["~> 3"])
+      s.add_development_dependency(%q<machinist>.freeze, ["~> 1.0.6"])
+      s.add_development_dependency(%q<faker>.freeze, ["~> 0.9.5"])
+      s.add_development_dependency(%q<sqlite3>.freeze, ["~> 1.4.1"])
+      s.add_development_dependency(%q<pg>.freeze, ["~> 0.21"])
+      s.add_development_dependency(%q<mysql2>.freeze, ["= 0.3.20"])
+      s.add_development_dependency(%q<pry>.freeze, ["= 0.10"])
+      s.add_development_dependency(%q<byebug>.freeze, [">= 0"])
+    else
+      s.add_dependency(%q<actionpack>.freeze, [">= 5.0"])
+      s.add_dependency(%q<activerecord>.freeze, [">= 5.0"])
+      s.add_dependency(%q<activesupport>.freeze, [">= 5.0"])
+      s.add_dependency(%q<i18n>.freeze, [">= 0"])
+      s.add_dependency(%q<polyamorous>.freeze, ["= 2.3.0"])
+      s.add_dependency(%q<rspec>.freeze, ["~> 3"])
+      s.add_dependency(%q<machinist>.freeze, ["~> 1.0.6"])
+      s.add_dependency(%q<faker>.freeze, ["~> 0.9.5"])
+      s.add_dependency(%q<sqlite3>.freeze, ["~> 1.4.1"])
+      s.add_dependency(%q<pg>.freeze, ["~> 0.21"])
+      s.add_dependency(%q<mysql2>.freeze, ["= 0.3.20"])
+      s.add_dependency(%q<pry>.freeze, ["= 0.10"])
+      s.add_dependency(%q<byebug>.freeze, [">= 0"])
+    end
   else
     s.add_dependency(%q<actionpack>.freeze, [">= 5.0"])
     s.add_dependency(%q<activerecord>.freeze, [">= 5.0"])

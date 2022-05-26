@@ -1,12 +1,12 @@
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-/Users/kentohorikami/.rbenv/versions/2.6.6/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220526-34690-14p6yg6.rb extconf.rb
+/Users/kentohorikami/.rbenv/versions/2.6.5/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20220526-52288-hixqtg.rb extconf.rb
 creating Makefile
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-make DESTDIR\= clean
+make "DESTDIR=" clean
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-make DESTDIR\=
+make "DESTDIR="
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
 compiling ./libsass/src/ast_fwd_decl.cpp
@@ -76,5 +76,5 @@ compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.bundle
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20220526-34690-92zgsl/sassc
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20220526-52288-1cto16e/sassc

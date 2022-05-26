@@ -14,28 +14,41 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/drapergem/draper".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.2.2".freeze)
-  s.rubygems_version = "3.3.4".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "View Models for Rails".freeze
 
-  s.installed_by_version = "3.3.4" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
-  end
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<actionpack>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<request_store>.freeze, [">= 1.0"])
-    s.add_runtime_dependency(%q<activemodel>.freeze, [">= 5.0"])
-    s.add_runtime_dependency(%q<activemodel-serializers-xml>.freeze, [">= 1.0"])
-    s.add_development_dependency(%q<ammeter>.freeze, [">= 0"])
-    s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-    s.add_development_dependency(%q<rspec-rails>.freeze, [">= 0"])
-    s.add_development_dependency(%q<minitest-rails>.freeze, [">= 0"])
-    s.add_development_dependency(%q<capybara>.freeze, [">= 0"])
-    s.add_development_dependency(%q<active_model_serializers>.freeze, [">= 0.10"])
-    s.add_development_dependency(%q<rubocop>.freeze, [">= 0"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<actionpack>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<request_store>.freeze, [">= 1.0"])
+      s.add_runtime_dependency(%q<activemodel>.freeze, [">= 5.0"])
+      s.add_runtime_dependency(%q<activemodel-serializers-xml>.freeze, [">= 1.0"])
+      s.add_development_dependency(%q<ammeter>.freeze, [">= 0"])
+      s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+      s.add_development_dependency(%q<rspec-rails>.freeze, [">= 0"])
+      s.add_development_dependency(%q<minitest-rails>.freeze, [">= 0"])
+      s.add_development_dependency(%q<capybara>.freeze, [">= 0"])
+      s.add_development_dependency(%q<active_model_serializers>.freeze, [">= 0.10"])
+      s.add_development_dependency(%q<rubocop>.freeze, [">= 0"])
+    else
+      s.add_dependency(%q<activesupport>.freeze, [">= 5.0"])
+      s.add_dependency(%q<actionpack>.freeze, [">= 5.0"])
+      s.add_dependency(%q<request_store>.freeze, [">= 1.0"])
+      s.add_dependency(%q<activemodel>.freeze, [">= 5.0"])
+      s.add_dependency(%q<activemodel-serializers-xml>.freeze, [">= 1.0"])
+      s.add_dependency(%q<ammeter>.freeze, [">= 0"])
+      s.add_dependency(%q<rake>.freeze, [">= 0"])
+      s.add_dependency(%q<rspec-rails>.freeze, [">= 0"])
+      s.add_dependency(%q<minitest-rails>.freeze, [">= 0"])
+      s.add_dependency(%q<capybara>.freeze, [">= 0"])
+      s.add_dependency(%q<active_model_serializers>.freeze, [">= 0.10"])
+      s.add_dependency(%q<rubocop>.freeze, [">= 0"])
+    end
   else
     s.add_dependency(%q<activesupport>.freeze, [">= 5.0"])
     s.add_dependency(%q<actionpack>.freeze, [">= 5.0"])

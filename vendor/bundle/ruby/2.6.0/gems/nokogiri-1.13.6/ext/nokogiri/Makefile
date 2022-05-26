@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0
+topdir = /Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21
+arch_hdrdir = /Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/kentohorikami/.rbenv/versions/2.6.6
+prefix = $(DESTDIR)/Users/kentohorikami/.rbenv/versions/2.6.5
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20220526-34690-3j6xem
-sitelibdir = $(DESTDIR)./.gem.20220526-34690-3j6xem
+sitearchdir = $(DESTDIR)./.gem.20220526-52288-1lvphfd
+sitelibdir = $(DESTDIR)./.gem.20220526-52288-1lvphfd
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -87,10 +87,10 @@ CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe -std=c99 -Wno-declaration-after-statement -g -Winline -Wmissing-noreturn $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_ICONV_H -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_GUMBO_PARSE_WITH_OPTIONS -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -DHAVE_VASPRINTF -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxml2/2.9.14/include/libxml2 -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxslt/1.1.35/include -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxml2/2.9.14/include/libxml2 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) -DNOKOGIRI_PACKAGED_LIBRARIES -DNOKOGIRI_LIBXML2_PATCHES="\"0001-Remove-script-macro-support.patch 0002-Update-entities-to-remove-handling-of-ssi.patch 0003-libxml2.la-is-in-top_builddir.patch 0004-use-glibc-strlen.patch 0005-avoid-isnan-isinf.patch 0006-update-automake-files-for-arm64.patch 0008-htmlParseComment-handle-abruptly-closed-comments.patch 0009-allow-wildcard-namespaces.patch\"" -DNOKOGIRI_LIBXSLT_PATCHES="\"0001-update-automake-files-for-arm64.patch\"" -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ext/nokogiri/ports/-darwin21/libgumbo/1.0.0-nokogiri/include -DNOKOGIRI_OTHER_LIBRARY_VERSIONS="\"libgumbo:1.0.0-nokogiri\""
+CPPFLAGS = -DHAVE_ICONV_H -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_GUMBO_PARSE_WITH_OPTIONS -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -DHAVE_VASPRINTF -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxml2/2.9.14/include/libxml2 -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxslt/1.1.35/include -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxml2/2.9.14/include/libxml2 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) -DNOKOGIRI_PACKAGED_LIBRARIES -DNOKOGIRI_LIBXML2_PATCHES="\"0001-Remove-script-macro-support.patch 0002-Update-entities-to-remove-handling-of-ssi.patch 0003-libxml2.la-is-in-top_builddir.patch 0004-use-glibc-strlen.patch 0005-avoid-isnan-isinf.patch 0006-update-automake-files-for-arm64.patch 0008-htmlParseComment-handle-abruptly-closed-comments.patch 0009-allow-wildcard-namespaces.patch\"" -DNOKOGIRI_LIBXSLT_PATCHES="\"0001-update-automake-files-for-arm64.patch\"" -I/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ext/nokogiri/ports/-darwin21/libgumbo/1.0.0-nokogiri/include -DNOKOGIRI_OTHER_LIBRARY_VERSIONS="\"libgumbo:1.0.0-nokogiri\""
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong
-dldflags = -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
+ldflags  = -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong
+dldflags = -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle

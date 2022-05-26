@@ -1,7 +1,7 @@
 "pkg-config --exists libffi"
 | pkg-config --libs libffi
 => "-lffi\n"
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lruby.2.6   "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lruby.2.6   "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -12,7 +12,7 @@ checked program was:
 6: }
 /* end */
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lruby.2.6 -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lruby.2.6 -lffi  "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -36,7 +36,7 @@ libs: -lffi
 
 have_library: checking for ffi_prep_closure_loc() in -lffi... -------------------- yes
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong      -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong      -lffi -lruby.2.6 -lffi  -lffi  "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -61,7 +61,7 @@ checked program was:
 
 have_func: checking for ffi_prep_cif_var()... -------------------- yes
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 conftest.c:14:57: error: use of undeclared identifier 'ffi_prep_cif_var'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return !p; }
                                                         ^
@@ -84,7 +84,7 @@ checked program was:
 14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -108,7 +108,7 @@ checked program was:
 
 have_func: checking for ffi_raw_call()... -------------------- yes
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 conftest.c:14:57: error: use of undeclared identifier 'ffi_raw_call'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return !p; }
                                                         ^
@@ -131,7 +131,7 @@ checked program was:
 14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -155,7 +155,7 @@ checked program was:
 
 have_func: checking for ffi_prep_raw_closure()... -------------------- yes
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 conftest.c:14:57: error: use of undeclared identifier 'ffi_prep_raw_closure'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_raw_closure; return !p; }
                                                         ^
@@ -178,7 +178,7 @@ checked program was:
 14: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_raw_closure; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -lffi  -lffi  "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -202,7 +202,7 @@ checked program was:
 
 block in append_ldflags: checking for whether -pthread is accepted as LDFLAGS... -------------------- yes
 
-"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.6/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -pthread  "
+"clang -o conftest -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/-darwin21 -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/backward -I/Users/kentohorikami/.rbenv/versions/2.6.5/include/ruby-2.6.0 -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/ffi -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c  -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib -L. -L/Users/kentohorikami/.rbenv/versions/2.6.5/lib  -fstack-protector-strong     -lffi  -lffi -lruby.2.6 -pthread  "
 checked program was:
 /* begin */
 1: #include "ruby.h"

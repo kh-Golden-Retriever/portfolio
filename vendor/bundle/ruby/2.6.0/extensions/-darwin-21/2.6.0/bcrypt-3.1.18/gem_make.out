@@ -1,15 +1,15 @@
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
-/Users/kentohorikami/.rbenv/versions/2.6.6/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220526-34690-190q2ln.rb extconf.rb
+/Users/kentohorikami/.rbenv/versions/2.6.5/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20220526-52288-1iyvngm.rb extconf.rb
 creating Makefile
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
-make DESTDIR\= clean
+make "DESTDIR=" clean
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
-make DESTDIR\=
+make "DESTDIR="
 compiling bcrypt_ext.c
 compiling crypt_blowfish.c
-clang  -D__SKIP_GNU -I/Users/kentohorikami/.rbenv/versions/2.6.6/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
+clang  -D__SKIP_GNU -I/Users/kentohorikami/.rbenv/versions/2.6.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
 compiling crypt_gensalt.c
 compiling wrapper.c
 wrapper.c:182:60: warning: declaration of 'struct crypt_data' will not be visible outside of this function [-Wvisibility]
@@ -19,5 +19,5 @@ char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
 linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20220526-34690-1ys2qpr
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20220526-52288-1sf7u06

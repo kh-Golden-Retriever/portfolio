@@ -1,17 +1,17 @@
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
-/Users/kentohorikami/.rbenv/versions/2.6.6/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220526-34690-o22mlx.rb extconf.rb
+/Users/kentohorikami/.rbenv/versions/2.6.5/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20220526-52288-afddle.rb extconf.rb
 checking for rb_block_call()... yes
 checking for rb_ary_subseq()... yes
 creating Makefile
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
-make DESTDIR\= clean
+make "DESTDIR=" clean
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
-make DESTDIR\=
+make "DESTDIR="
 compiling cparse.c
 linking shared-object racc/cparse.bundle
 
 current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/racc-1.6.0/ext/racc/cparse
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20220526-34690-1gx6tzk/racc
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20220526-52288-givekq/racc

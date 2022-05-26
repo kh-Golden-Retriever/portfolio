@@ -19,13 +19,15 @@ Rails.application.routes.draw do
   end
 
   resources :notifications, only: %i[ index update ]
-
+  
   resources :communities
   resources :users
   resources :gifts
-
+  
   get 'mypage', to: 'mypages#top'
-  resource :profile, only: %i[show edit update]
+  resources :mypages, only: %i[ index ]
+  
+  resource :profile, only: %i[ show edit update ]
 
   resources :gifts do
     resource :likes, only: %i[ create destroy ]

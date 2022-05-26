@@ -8,7 +8,7 @@ class CreateTablesExceptUser < ActiveRecord::Migration[6.0]
 
     create_table :communities do |t|
       t.references :user, null: false, foreign_key: true
-      t.string :name
+      t.string :name, null: false
       t.string :community_code
 
       t.timestamps                null: false

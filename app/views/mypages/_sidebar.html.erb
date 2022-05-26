@@ -1,30 +1,28 @@
 <!--Main Navigation-->
-<div class="sidebar">
-  <!-- Sidebar -->
-  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-light-brown">
-    <div class="position-sticky">
-      <ul class="list-unstyled">
-        <li class="list-group list-group-flush text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-        <li class="list-group list-group-flush  text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-        <li class="list-group list-group-flush  text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-        <li class="list-group list-group-flush  text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-        <li class="list-group list-group-flush  text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-      </ul>
-      <ul class="list-unstyled">
-        <li class="list-group list-group-flush text-center">
-          <%= link_to '出品している商品',  gifts_path, class:"list-group-item list-group-item-action py-3 ripple bg-light-brown white", 'aria-current'=>"true" %>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<div class="d-flex flex-column text-center  border-white bg-light-brown fs-5" id='sidebar'>
+  <div class="list-group-flush border-bottom">
+    <%= link_to '出品しているGift', mypages_path(sort_id: :display), remote: true, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="list-group-flush border-bottom">
+    <%= link_to '未出品・下書き', mypages_path(sort_id: :undisplay), remote: true, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="list-group-flush border-bottom">
+    <%= link_to '受け取ったGift', mypages_path(sort_id: :gotten), remote: true, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="list-group-flush border-bottom">
+    <%= link_to 'いいねしたGift', mypages_path(sort_id: :liked), remote: true, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="mt-4 mb-auto">
+    <%= link_to 'Giftを出品する', new_gift_path, class:'btn btn-fill-wine-red w-50'%>
+  </div>
+  <%# ここから下側 %>
+  <div class="list-group-flush border-bottom border-top">
+    <%= link_to 'プロフィール',  profile_path, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="list-group-flush border-bottom">
+    <%= link_to '通知・機能機能(工事中)',  gifts_path, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
+  <div class="list-group-flush border-bottom">
+    <%= link_to 'お問い合わせ(工事中)',  gifts_path, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+  </div>
 </div>

@@ -1,7 +1,6 @@
 <div class="col-3">
   <div class="card h-100">
     <% if gift.images.any? %>
-      <%binding.pry%>
       <%= image_tag gift.images.first.url, class:"card-img-top" %>
     <% else %>
       <%= image_tag 'gift_default_image.png' %>

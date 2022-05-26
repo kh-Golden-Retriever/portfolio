@@ -1,0 +1,11 @@
+<tr>
+  <td><% if gift.images.any? %>
+      <%= image_tag gift.images.first.url, size:"100x100"  %>
+    <% else %>
+      <%= image_tag 'gift_default_image.png', size:"100x100" %>
+    <% end %>
+  </td>
+  <td><%= gift.title %></td>
+  <td><%= gift.description %></td>
+  <td><%= link_to 'giftページへ', gift_path(gift) %></td>
+</tr>

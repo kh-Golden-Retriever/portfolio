@@ -13,4 +13,5 @@ class Gift < ApplicationRecord
   validates :price, numericality: { less_than_or_equal_to: 999999 }, allow_blank: true
 
   enum status: {draft:0, display:1, undisplay:2, done_deal:3}
+
 end

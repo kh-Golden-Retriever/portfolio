@@ -15,9 +15,13 @@
     <div>
       <%= render partial: 'shared/flash_message' %>
     </div>
-    <%= yield %>
-    <footer>
-      <%=render 'shared/footer'%>
-    </footer>
+    <main>
+      <%= yield %>
+    </main>
+    <% unless current_page?(mypage_path) %>
+      <footer>
+        <%=render 'shared/footer'%>
+      </footer>
+    <% end %>
   </body>
 </html>

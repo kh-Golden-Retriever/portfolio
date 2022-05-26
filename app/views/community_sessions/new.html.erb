@@ -1,30 +1,33 @@
 <div class="container w-50">
-  <h1 class="light-brown">コミュニティに参加する</h1>
-  <div class="mx-auto mt-3 w-100 light-brown">
-    <%=form_with url: community_session_path, method: :post, local: true do |f|%>
-      <div class='form-group mb-5'>
-        <%= f.select :id, current_user.communities.pluck(:name,:id) %>
-      </div>
-      <div>
-        <%= f.submit '参加する' ,class:'btn btn-fill-wine-red'%>
-      </div>
-    <% end %>
+  <div class="mt-5">
+    <h1 class="light-brown">コミュニティに参加する</h1>
+    <div class="mx-auto mt-3 w-100 light-brown">
+      <%=form_with url: community_session_path, method: :post, local: true do |f|%>
+        <div>
+          <%= f.select :id, current_user.communities.pluck(:name,:id),{} ,{class:'mb-3 form-select outline-light-brown brown'}%>
+        </div>
+        <div>
+          <%= f.submit '参加する' ,class:'btn btn-fill-wine-red'%>
+        </div>
+      <% end %>
+    </div>
   </div>
   <br>
   <br>
   <br>
   <br>
-  <br>
-  <h1 class="light-brown">新しくコミュニティを作る</h1>
-  <div class="mx-auto mt-3 w-100 light-brown">
-    <%=form_with model: @community, method: :post, local: true do |f|%>
-      <div class='form-group mb-5'>
-        <%= f.label :name %>
-        <%= f.text_field :name, class:'form-control outline-light-brown' %>
-      </div>
-      <div>
-        <%= f.submit '新しく作成する' ,class:'btn btn-fill-wine-red'%>
-      </div>
-    <% end %>
+  <div class="mt-5">
+    <h1 class="light-brown">新しくコミュニティを作る</h1>
+    <div class="mx-auto mt-3 w-100 light-brown">
+      <%=form_with model: @community, method: :post, local: true do |f|%>
+        <div class='form-group  mb-3'>
+          <%= f.label :name %>
+          <%= f.text_field :name, class:'form-control outline-light-brown' %>
+        </div>
+        <div>
+          <%= f.submit '新しく作成する' ,class:'btn btn-outline-wine-red'%>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

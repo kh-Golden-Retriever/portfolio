@@ -1,10 +1,10 @@
-<header>
+<header id="header">
   <nav class="navbar navbar-expand-lg bg-brown white">
     <div class="container-fluid">
-      <%=link_to root_path ,class:'navbar-brand' do%>
+      <%=link_to root_path ,class:'navbar-brand me-1' do%>
         <%= image_tag 'logo_without_text.png', size:'32x28' %>
       <%end%>
-      <a class="navbar-brand white" href="#">Give To...</a>
+      <%= link_to 'Give To...', root_path, class:"navbar-brand white me-0" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,39 +13,41 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if @current_community %>
               <li class="nav-item">
-                <div class="nav-link active white">
-                  <%= @current_community.name %>
+                <div class="nav-link active fw-bold white me-5">
+                  <%= "\"#{@current_community.name}\"" %>
                 </div>
               </li>
             <% end %>
-            <li class="nav-item">
-              <%= link_to 'Gift一覧', gifts_path, class:"nav-link active white", "aria-current"=>"page" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'ユーザー一覧', users_path, class:"nav-link active white", "aria-current"=>"page" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'マイページ', mypage_path, class:"nav-link active white", "aria-current"=>"page" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to '招待リンク', generate_token_invitations_path, class:"nav-link active white", "aria-current"=>"page" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'ログアウト', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'} ,class:'nav-link white'%>
-            </li>
           </ul>
           <ul class="navbar-nav mb-2 me-5 mb-lg-0">
-            <li class="nav-item me-3 position-relative">
-              <div class='dropdown-toggle brown', data-bs-toggle="dropdown", aria-expanded="false">
-                <%= image_tag 'bell.png', size: '35x35' %>
-                <span class="badge rounded-pill badge-notification bg-danger position-absolute top-50 start-50"><%=@notifications&.count%></span>
-              </div>
-              <div class="dropdown-menu dropdown-menu-end bg-light-brown mt-2 p-0 border-0">
-                <%= render 'notifications/index', notifications: @notifications %>
-              </div>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Giftを出品する', new_gift_path, class:'btn btn-fill-wine-red'%>
+            <% if @current_community %>
+              <li class="nav-item">
+                <%= link_to 'Gift一覧', gifts_path, class:"nav-link active white", "aria-current"=>"page" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'ユーザー一覧', users_path, class:"nav-link active white", "aria-current"=>"page" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'マイページ', mypage_path, class:"nav-link active white", "aria-current"=>"page" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '招待リンク', generate_token_invitations_path, class:"nav-link active white", "aria-current"=>"page" %>
+              </li>
+              <li class="nav-item mx-3 position-relative">
+                <div class='dropdown-toggle brown', data-bs-toggle="dropdown", aria-expanded="false">
+                  <%= image_tag 'bell.png', size: '35x35' %>
+                  <span class="badge rounded-pill badge-notification bg-danger position-absolute top-50 start-50"><%=@notifications&.count%></span>
+                </div>
+                <div class="dropdown-menu dropdown-menu-lg bg-light-brown mt-2 p-0 border-0">
+                  <%= render 'notifications/index', notifications: @notifications %>
+                </div>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Giftを出品する', new_gift_path, class:'btn btn-fill-wine-red'%>
+              </li>
+            <% end %>
+            <li class="nav-item ms-3">
+              <%= link_to 'ログアウト', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'} ,class:'nav-link white'%>
             </li>
           </ul>
         <% end %>

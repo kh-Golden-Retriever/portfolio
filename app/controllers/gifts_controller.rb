@@ -3,7 +3,7 @@ class GiftsController < ApplicationController
 
   def index
     @q = @current_community.gifts.ransack(params[:q])
-    @gifts = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @gifts = @q.result.includes(:user).order(created_at: :desc)
   end
 
   def show

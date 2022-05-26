@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @q = @current_community.users.ransack(params[:q])
-    @users = @q.result(distinct: true).order(created_at: :desc)
+    @users = @q.result.order(created_at: :desc)
   end
 
   def new

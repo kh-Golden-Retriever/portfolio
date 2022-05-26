@@ -17,8 +17,9 @@ class InvitationsController < ApplicationController
     @token = CommunityToken.find_by(uuid: params[:uuid])
     @community = Community.find(@token.community_id)
     @user = @community.users.new(user_params)
-
+    
     if @user.save
+      UserCommunity.create!(user_id: @user.id, community_id: @community.id)
       redirect_to gifts_path, success: 'success'
     else
       flash.now[:danger] = 'failed'

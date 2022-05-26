@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_25_054952) do
+ActiveRecord::Schema.define(version: 2022_05_25_110948) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -83,6 +83,19 @@ ActiveRecord::Schema.define(version: 2022_05_25_054952) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "notifying_user_id"
+    t.integer "notified_user_id"
+    t.string "event_type"
+    t.integer "event_id"
+    t.boolean "is_checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_type", "event_id"], name: "index_notifications_on_event_type_and_event_id"
+    t.index ["notified_user_id"], name: "index_notifications_on_notified_user_id"
+    t.index ["notifying_user_id"], name: "index_notifications_on_notifying_user_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "description"
@@ -128,5 +141,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_054952) do
   add_foreign_key "gifts", "users"
   add_foreign_key "likes", "gifts"
   add_foreign_key "likes", "users"
+  add_foreign_key "notifications", "users", column: "notified_user_id"
+  add_foreign_key "notifications", "users", column: "notifying_user_id"
   add_foreign_key "profiles", "users"
 end

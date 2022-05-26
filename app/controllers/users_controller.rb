@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   before_action :set_current_user, only: %i[ edit update ]
   skip_before_action :require_login, only: %i[ new create ]
   skip_before_action :set_current_community, only: %i[ new create ]
+  skip_before_action :set_notifications, only: %i[ new create ]
 
   def index
-    @q = User.ransack(params[:q])
+    @q = @current_community.users.ransack(params[:q])
     @users = @q.result(distinct: true).order(created_at: :desc)
   end
 

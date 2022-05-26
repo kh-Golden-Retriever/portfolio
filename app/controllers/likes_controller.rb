@@ -3,9 +3,10 @@ class LikesController < ApplicationController
 
   def create
     if @gift.user_id != current_user.id
-      Like.create!(user_id: current_user.id, gift_id: @gift.id)
+      @like = Like.create!(user_id: current_user.id, gift_id: @gift.id)
+      @like.notifications.new(notifying_user: @gift.user, notified_user: current_user)
+      @like.save
     end
-    @aaa = 'iuiuh'
   end
 
   def destroy

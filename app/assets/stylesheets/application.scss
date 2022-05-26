@@ -63,6 +63,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   }
 
 
+  .navbar .dropdown-menu.show {
+    width: 25vw;
+    display: inline-block;
+}
+
+
   @media (min-width: 991.98px) {
     main {
     padding-left: 240px;
@@ -102,3 +108,4 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     }
     
+

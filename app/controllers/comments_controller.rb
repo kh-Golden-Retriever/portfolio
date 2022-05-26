@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
     @gift = Gift.find(params[:gift_id])
     @comment = @gift.comments.new(comment_params)
     @comment.user_id = current_user.id
+
+    # 自分のgiftで無いときに通知を作る
+    unless @gift.user == current_user
+      @comment.notifications.new(notifying_user: @gift.user, notified_user: current_user)
+    end
     @comment.save
   end
 

@@ -1,6 +1,7 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, except:[:destroy]
   skip_before_action :set_current_community, except:[:destroy]
+  skip_before_action :set_notifications, except:[:destroy]
   
   def new
     @user = User.new
@@ -19,6 +20,7 @@ class UserSessionsController < ApplicationController
   def destroy
     logout
     flash[:success] = 'success'
+    session.delete(:community_id)
     redirect_to login_path
   end
 

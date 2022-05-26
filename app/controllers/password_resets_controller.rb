@@ -1,5 +1,7 @@
 class PasswordResetsController < ApplicationController
   skip_before_action :require_login
+  skip_before_action :set_notifications
+  skip_before_action :set_current_community
 
   def new
     @user = User.new

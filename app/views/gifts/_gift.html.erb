@@ -3,7 +3,7 @@
     <% if gift.images.any? %>
       <%= image_tag gift.images.first.to_s, class:"card-img-top" %>
     <% else %>
-      <%= image_tag 'gift_default_image' %>
+      <%= image_tag 'gift_default_image.png' %>
     <% end %>
     <div class="card-body">
       <h5 class="card-title"><%= gift.title %></h5>

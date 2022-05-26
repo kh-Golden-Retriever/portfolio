@@ -2,7 +2,7 @@
   <td><% if user.avatar.present? %>
       <%= image_tag user.avatar, class:"card-img-top", size:"50x50"  %>
     <% else %>
-      <%= image_tag 'avatar_default_image', size:"50x50" %>
+      <%= image_tag 'avatar_default_image.png', size:"50x50" %>
     <% end %>
   </td>
   <td><%= user.name %></td>

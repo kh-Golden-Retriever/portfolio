@@ -1,15 +1,15 @@
-current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vender/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-/Users/kentohorikami/.rbenv/versions/2.6.5/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20220518-23869-1jq2ucd.rb extconf.rb
+current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/kentohorikami/.rbenv/versions/2.6.6/bin/ruby -I /Users/kentohorikami/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220526-34690-6ncq2y.rb extconf.rb
 creating Makefile
 
-current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vender/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR=" clean
+current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= clean
 
-current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vender/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR="
+current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\=
 compiling websocket_mask.c
 linking shared-object websocket_mask.bundle
 
-current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vender/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20220518-23869-1wz3giw
+current directory: /Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20220526-34690-psrq77

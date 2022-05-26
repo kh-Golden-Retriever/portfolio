@@ -133,7 +133,7 @@ extern "C" {
 #ifndef WITH_MODULES
 #define WITH_MODULES
 #endif
-#define LIBXSLT_DEFAULT_PLUGINS_PATH() "/Users/kentohorikami/portfolio/portfolio/give_to/vender/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxslt/1.1.35/lib/libxslt-plugins"
+#define LIBXSLT_DEFAULT_PLUGINS_PATH() "/Users/kentohorikami/portfolio/portfolio/give_to/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.13.6/ports/-darwin21/libxslt/1.1.35/lib/libxslt-plugins"
 #endif
 
 /**

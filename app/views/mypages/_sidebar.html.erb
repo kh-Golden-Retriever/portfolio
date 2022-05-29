@@ -17,7 +17,7 @@
   </div>
   <%# ここから下側 %>
   <div class="list-group-flush border-bottom border-top">
-    <%= link_to 'プロフィール',  profile_path, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
+    <%= link_to 'プロフィール',  user_path(@current_user), class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>
   </div>
   <div class="list-group-flush border-bottom">
     <%= link_to '通知・機能機能(工事中)',  gifts_path, class:"list-group-item list-group-item-action py-4 ripple bg-light-brown white", 'aria-current'=>"true" %>

@@ -1,0 +1,30 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-fill-wine-red" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  このGiftを渡す
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-1">
+      <div class="modal-header">
+        <h5 class="modal-title light-brown" id="exampleModalLabel">渡す相手を選ぶ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+          <%= form_with url: gift_done_deals_path(gift), local: true do |f|%>
+            <div class="row g-0 py-1" id="js-done-deal-modal" style="">
+              <%= f.collection_select :user_id, User.all.map{ |user| [user.name, user.id] },:second,:first,{},{class: 'offset-2 col-8 outline-light-brown p-1 '} %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer row g-0">
+          <div class="">
+            <button type="button" class="offset-6 col-2 btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= f.submit '決定する', class:"col-2 p-1 btn btn-fill-wine-red"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

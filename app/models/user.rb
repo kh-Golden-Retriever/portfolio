@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_gifts, through: :likes, source: :gift
 
+  # 取引の情報なのでデストロイしないようにする
+  has_many :done_deals
+  has_many :got_gifts, through: :done_deals, source: :gift
+  
   has_many :user_communities, dependent: :destroy
   has_many :communities, through: :user_communities, source: :community
 

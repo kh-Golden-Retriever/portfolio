@@ -28,10 +28,13 @@
         </div>
         <div class='form-group mb-5'>
           <%= f.label :images %>
-          <%= f.file_field :images, multiple: true, class:'form-control outline-light-brown', accept: 'image/*' %>
+          <%= f.file_field :images, multiple: true, class:'form-control outline-light-brown' %>
         </div>
         <div class="actions">
-          <%= f.submit '作成する', class:'btn btn-fill-wine-red' %>
+          <%= f.submit '下書き保存', name:'draft', class:'btn btn-outline-wine-red' %>
+        </div>
+        <div class="actions">
+          <%= f.submit '作成して公開', name:'display', class:'btn btn-fill-wine-red' %>
         </div>
       <% end %>
     </div>

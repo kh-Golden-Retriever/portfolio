@@ -1,9 +1,11 @@
-<div class="container mx-auto mt-5 w-50 light-brown">
-  <%= form_with model: [gift,comment], id:'js-new-comment-form' do |f| %>
+<div class="mx-auto mt-5 light-brown" id="js-new-comment-form">
+  <%= form_with model: [gift,comment] do |f| %>
     <div  class='form-group mb-5'>
       <%=f.label :content%>
-      <%=f.text_area :content, row: 3, id:'js-new-comment-content', class:'form-control outline-light-brown' %>
+      <%=f.text_area :content, rows: 4, id:'js-new-comment-content', class:'form-control outline-light-brown' %>
     </div>
-    <%=f.submit 'コメントする',class:'btn btn-fill-wine-red'%>
+    <div class="text-center">
+      <%=f.submit 'コメントする',class:'btn btn-fill-wine-red'%>
+    </div>
   <% end %>
 </div>

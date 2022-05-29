@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_25_110948) do
+ActiveRecord::Schema.define(version: 2022_05_29_105055) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_110948) do
     t.integer "gift_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["gift_id"], name: "index_done_deals_on_gift_id"
+    t.index ["gift_id"], name: "index_done_deals_on_gift_id", unique: true
     t.index ["user_id"], name: "index_done_deals_on_user_id"
   end
 

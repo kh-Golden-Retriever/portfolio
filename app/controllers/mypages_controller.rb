@@ -8,10 +8,10 @@ class MypagesController < ApplicationController
   case params[:sort_id]
     when 'display' then
         @page_title = '出品しているGift'
-        @gifts = current_user.gifts
+        @gifts = current_user.gifts.display
     when 'undisplay' then
         @page_title = '未出品・下書き'
-        @gifts = current_user.gifts
+        @gifts = current_user.gifts.merge(current_user.gifts.undisplay).or((current_user.gifts.draft))
     when 'gotten' then
         @page_title = '受け取ったGift'
         @gifts = current_user.gifts

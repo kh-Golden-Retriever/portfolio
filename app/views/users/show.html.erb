@@ -1,9 +1,6 @@
-<% if @user.avatar.present? %>
-  <%= image_tag @user.avatar %>
-<% else %>
-  <%= image_tag 'avatar_default_image.png', size: '100x100'%>
-<% end %>
-<ul class="list list-group">
-  <li class="list-group-item"><%=@user.name%></li>
-  <li class="list-group-item"><%=@user.email%></li>
-</ul>
+<br>
+<br>
+<div class="container">
+  <%= render 'users/user_detail', user: @user %>
+  <%= render 'mypages/index', { gifts: @user.gifts, page_title: "#{@user.name}さんのGift" } %>
+</div>

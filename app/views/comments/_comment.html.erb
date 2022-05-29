@@ -1,19 +1,30 @@
-<thead id="js-comment-item-<%=comment.id%>">
-  <tr>
-    <td>
-      <%=comment.content%>
-    </td>
-    <td>
-      <%=comment.created_at%>
-    </td>
-    <td>
+<div class="row g-0 my-2" id="js-comment-item-<%=comment.id%>">
+  <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+    <% if comment.user.avatar.present? %>
+      <%= image_tag comment.user.avatar.url, size:"30x30"  %>
+    <% else %>
+      <%= image_tag 'avatar_default_image.png', size:"30x30" %>
+    <% end %>
+    <div>
       <%=comment.user.name%>
-    </td>
-    <td>
-      <%= link_to 'delete', gift_comment_path(gift, comment), method: :delete, remote: true, data: {confirm: 'delete?'} %>
-    </td>
-    <td>
-      <%= link_to 'edit', edit_gift_comment_path(gift, comment), remote: true %>
-    </td>
-  </tr>
-</thead>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="row g-0 outline-light-brown rounded p-1">
+      <div class="col-8">
+        <%=comment.content%>
+      </div>
+      <div class="col-4">
+        <div>
+          <%=comment.decorate.created_at%>
+        </div>
+        <div>
+          <%= link_to 'delete', gift_comment_path(gift, comment), method: :delete, remote: true, data: {confirm: 'delete?'} %>
+        </div>
+        <div>
+          <%= link_to 'edit', edit_gift_comment_path(gift, comment), remote: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

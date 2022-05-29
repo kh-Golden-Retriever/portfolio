@@ -1,0 +1,52 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="container outline-light-brown w-75 position-relative">
+    <% if gift.done_deal %>
+      <span class="badge bg-wine-red position-absolute bottom-0 end-0 fs-4">sold out</span>
+    <% end %>
+    <div class="text-center">
+      <% if gift.images.any? %>
+        <%= image_tag gift.images.first.url, size:"300x300" %>
+      <% else %>
+        <%= image_tag 'gift_default_image.png', size:"300x300" %>
+      <% end %>
+    </div>
+  </div>
+  <div class='mt-5 w-75'>
+    <div class=''>
+      <h6 class='light-brown border-bottom-light-brown'>ギフト名</h6>
+      <div class='mb-5 px-2 fs-3'>
+        <%= gift.title %>
+      </div>
+    </div>
+    <div>
+      <h6 class='light-brown border-bottom-light-brown'>価格</h6>
+      <div class='mb-5 px-2 pb-3 fs-3'>
+        <%= gift.price %>
+      </div>
+    </div>
+    <div>
+      <h6 class='light-brown border-bottom-light-brown'>概要</h6>
+      <div class='mb-5 px-2 pb-3'>
+        <%= gift.description %>
+      </div>
+    </div>
+    <div>
+      <h6 class='light-brown border-bottom-light-brown'>受け渡し方法</h6>
+      <div class='mb-5 px-2 pb-3'>
+        <%= gift.how_to_give %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to '編集する', edit_gift_path(gift), class:"btn btn-outline-wine-red mt-3 px-4" %>
+  </div>
+  <div class="mt-5">
+    <% if @current_user == gift.user%>
+      <% if gift.done_deal  %>
+        <%= link_to "#{gift.gifted_user.name}さんとの取引を取り消す", gift_done_deals_path(gift), method: :delete, data:{confirm: "本当に取り消しますか？"}, class:"btn btn-fill-wine-red mt-3 px-4" %>
+      <% elsif %>
+        <%= render 'gifts/modal_for_done_deal', { users: users, gift: gift } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

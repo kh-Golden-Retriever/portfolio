@@ -1,10 +1,15 @@
 <div class="col-3">
   <div class="card h-100">
-    <% if gift.images.any? %>
-      <%= image_tag gift.images.first.url, class:"card-img-top" %>
-    <% else %>
-      <%= image_tag 'gift_default_image.png' %>
-    <% end %>
+    <div class="position-relative">
+      <% if gift.done_deal %>
+        <span class="badge bg-wine-red position-absolute bottom-0 end-0 fs-4" >sold out</span>
+      <% end %>
+      <% if gift.images.any? %>
+        <%= image_tag gift.images.first.url, class:"card-img-top" %>
+      <% else %>
+        <%= image_tag 'gift_default_image.png', class:"card-img-top" %>
+      <% end %>
+    </div>
     <div class="card-body">
       <h5 class="card-title"><%= gift.title %></h5>
       <div class="card-text">

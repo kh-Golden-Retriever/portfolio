@@ -1,0 +1,11 @@
+<div class="d-flex flex-column text-center">
+  <% if gift.images.any? %>
+    <% gift.images.each do |image| %>
+      <div class="pb-3">
+        <%= image_tag image.url, size:"150x150", class:"outline-light-brown p-1" %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= image_tag 'gift_default_image.png' %>
+  <% end %>
+</div>

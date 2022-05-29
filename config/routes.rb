@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :gifts do
     resource :likes, only: %i[ create destroy ]
+    resource :done_deals, only: %i[ create destroy ]
     resources :comments, only: %i[ show create edit update destroy ]
   end
 

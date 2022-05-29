@@ -3,7 +3,13 @@
     <%= render 'sidebar'%>
   </div>
   <div class="col-9">
-    <div id="main">メインだよ</div>
+    <div id="main">
+      <br>
+      <br>
+      <br>
+      <%= render 'users/user_detail', user: @current_user %>
+    </div>
   </div>
 </div>
+<%# 高さを調整するためのjs %>
 <%= javascript_pack_tag 'mypages/top' %>

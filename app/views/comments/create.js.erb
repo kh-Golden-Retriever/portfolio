@@ -2,6 +2,6 @@ $("#js-error-message").remove()
 <% if @comment.errors.any? %>
 $("#js-new-comment-form").prepend("<%=j(render 'shared/error_message', obj: @comment)%>")
 <% else %>
-$("#js-comments-list").prepend("<%=j(render 'comment', {gift: @gift, comment: @comment})%>")
+$("#js-comments-list").append("<%=j(render 'comment', {gift: @gift, comment: @comment})%>")
 $("#js-new-comment-content").val('')
 <% end %>

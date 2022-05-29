@@ -1,0 +1,13 @@
+    <%= form_with model: [gift,comment] do |f| %>
+  <div class="row g-0">
+    <div class="col-6 offset-2">
+      <div  class='form-group'>
+        <%=f.text_area :content, rows: 4, class:'form-control outline-light-brown' %>
+      </div>
+    </div>
+    <div class="col-4 d-flex align-items-end">
+      <%=f.submit '編集する',class:'btn btn-outline-wine-red'%>
+    </div>
+  <% end %>
+</div>
+</div>

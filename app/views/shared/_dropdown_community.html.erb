@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
-  <ul class="notifications_list list-unstyled text-center list-group bg-light-brown">
+  <ul class="notifications_list list-unstyled text-center list-group bg-brown">
     <%current_user.communities.each do |community|%>
-      <li class="list-group-item bg-light-brown border-white border-0 border-bottom"><%= link_to community.name, community_session_path(id: community.id), method: :post, class:"white text-decoration-none"%></li>
+      <li class="list-group-item bg-brown border-white border-0 border-bottom"><%= link_to community.name, community_session_path(id: community.id), method: :post, class:"white text-decoration-none"%></li>
     <% end %>
   </ul>
 </ul>

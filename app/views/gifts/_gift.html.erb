@@ -1,34 +1,22 @@
 <div class="col-3">
-  <div class="card h-100">
-    <div class="position-relative">
-      <% if gift.done_deal %>
-        <span class="badge bg-wine-red position-absolute bottom-0 end-0 fs-4" >sold out</span>
-      <% end %>
-      <% if gift.images.any? %>
-        <%= image_tag gift.images.first.url, class:"card-img-top" %>
-      <% else %>
-        <%= image_tag 'gift_default_image.png', class:"card-img-top" %>
-      <% end %>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= gift.title %></h5>
-      <div class="card-text">
-        <ul class="list-unstyled">
-          <li>
-            <%= gift.description %>
-          </li>
-          <li>
-            <%= gift.price %>
-          </li>
-          <li>
-            <%= gift.created_at.strftime('%-m/%d %H:%M') %>
-          </li>
-          <li>
-            <%= link_to  user_path(gift.user) do %>
-              <%= gift.user.name %>
-            <% end %>
-          </li>
-          <li>
+  <%= link_to gift, class:"text-decoration-none text-reset" do%>
+    <div class="card h-100 outline-light-brown">
+      <div class="position-relative">
+        <% if gift.done_deal %>
+          <span class="badge bg-wine-red position-absolute bottom-0 end-0 fs-4" >sold out</span>
+        <% end %>
+        <% if gift.images.any? %>
+          <%= image_tag gift.images.first.url, class:"card-img-top" %>
+        <% else %>
+          <%= image_tag 'gift_default_image.png', class:"card-img-top" %>
+        <% end %>
+      </div>
+      <div class="card-body px-4">
+        <div class="card-title row g-0 position-relative">
+          <div class="col-10">
+            <h5><%= gift.title %></h5>
+          </div>
+          <div class="position-absolute end-0 bottom-10 col-1">
             <% unless current_user.my_gift?(gift) %>
               <% if current_user.liked?(gift) %>
                 <%= render 'liked_star', gift: gift %>
@@ -36,12 +24,35 @@
                 <%= render 'unliked_star', gift: gift %>
               <% end %>
             <% end %>
-          </li>
-          <li>
-            <%= link_to 'Show', gift %>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <div class="card-text">
+          <ul class="list-unstyled">
+            <li class="mb-2" style="height:3rem; overflow:auto;">
+              <%= gift.description %>
+            </li>
+            <li class="mb-2 text-end fw-bold">
+              <%= "#{gift.price}円" %>
+            </li>
+            <li class="mb-2">
+              <%= link_to  user_path(gift.user),class:"text-decoration-none text-reset row g-0" do %>
+                <div class="col-2">
+                  <%= image_tag gift.user.avatar.url, size:'30x30' %>
+                </div>
+                <div class="col-4">
+                  <%= gift.user.name %>
+                </div>
+                <div class="col-4">
+                  <small class="text-muted">
+                    <%= gift.created_at.strftime('%-m/%d %H:%M') %>
+                  </small>
+                </div>
+                <div class="col-2 text-muted small text-end"><span><i class="far fa-comment pe-1"></i></span><%=gift.comments.size%></div>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

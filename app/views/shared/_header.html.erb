@@ -13,11 +13,13 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if @current_community %>
               <li class="nav-item">
-                <div class='dropdown-toggle brown nav-link active fw-bold white me-1', data-bs-toggle="dropdown", aria-expanded="false">
-                  <%= "\"#{@current_community.name}\"" %>
-                </div>
-                <div class="dropdown-menu dropdown-menu-lg bg-light-brown mt-2 p-0 border-0">
-                  <%= render 'shared/dropdown_community' %>
+                <div class="dropdown">
+                  <div class='dropdown-toggle brown nav-link active fw-bold white me-1', data-bs-toggle="dropdown", aria-expanded="false">
+                    <%= "\"#{@current_community.name}\"" %>
+                  </div>
+                  <div class="dropdown-menu dropdown-menu-lg bg-brown p-0 border-0">
+                    <%= render 'shared/dropdown_community' %>
+                  </div>
                 </div>
               </li>
               <li class="nav-item">
@@ -46,7 +48,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <%= link_to 'Giftを公開する', new_gift_path, class:'btn btn-fill-wine-red'%>
+                <%= link_to 'Giftを作成する', new_gift_path, class:'btn btn-fill-wine-red'%>
               </li>
             <% end %>
             <li class="nav-item ms-3">

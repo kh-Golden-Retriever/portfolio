@@ -1,0 +1,5 @@
+$("#js-create-invitation-url").append('<textarea id="js-invitation-url"><%=j(@url)%></textarea>');
+$("#js-invitation-url").select();
+document.execCommand('copy');
+$("#js-invitation-url").remove();
+alert('クリップボードに招待リンクをコピーしました。\nURLの期限は1週間です。\nURLを共有して登録してもらいましょう。');

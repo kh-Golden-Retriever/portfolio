@@ -7,5 +7,12 @@
   </td>
   <td><%= gift.title %></td>
   <td><%= gift.description %></td>
+  <% if gift.done_deal %>
+    <td><span class="badge bg-wine-red">sold out</span></td>
+  <% elsif gift.status = 'display' %>
+    <td><span class="badge bg-primary">公開中</span></td>
+  <% elsif gift.status = 'undisplay' %>
+    <td><span class="badge bg-warning">非公開/下書き</span></td>
+  <% end %>
   <td><%= link_to 'giftページへ', gift_path(gift) %></td>
 </tr>

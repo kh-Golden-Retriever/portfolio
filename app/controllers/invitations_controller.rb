@@ -5,6 +5,10 @@ class InvitationsController < ApplicationController
     @token.uuid = SecureRandom.uuid
     @token.save!
     @url = new_invitation_url(uuid: @token.uuid)
+
+    # response do |f|
+    #   f.js { render :generate_token }
+    # end
   end
 
   def new

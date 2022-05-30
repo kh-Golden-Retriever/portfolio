@@ -25,12 +25,12 @@ class GiftsController < ApplicationController
     @gift = current_user.gifts.new(gift_params)
     @gift.community_id = @current_community.id
 
-    if params[:draft]
-      @gift.status = :draft
-      message = "下書きとして保存しました"
+    if params[:undisplay]
+      @gift.status = :undisplay
+      message = "下書き/非公開として保存しました"
     elsif params[:display]
       @gift.status = :display
-      message = "保存して出品しました"
+      message = "保存して公開しました"
     end
     
     if @gift.save

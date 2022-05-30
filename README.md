@@ -1,3 +1,9 @@
+## 力を入れたところ
+・通知機能
+・コミュニティ機能
+・マイページのAjax
+
+
 ## 画面遷移図
 
 https://www.figma.com/file/k6HIjQdRzYpwbm3FgFN297/Flowcharts-Web?node-id=0%3A1

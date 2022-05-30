@@ -2,9 +2,6 @@ class CommunitiesController < ApplicationController
   before_action :require_login
   skip_before_action :set_current_community, only: %i[ new create ]
   
-  def show
-  end
-
   def new
     @community = Community.new
   end
@@ -23,16 +20,6 @@ class CommunitiesController < ApplicationController
       flash.now[:danger] = 'failed'
       render :new
     end
-
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

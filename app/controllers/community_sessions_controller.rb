@@ -11,6 +11,4 @@ class CommunitySessionsController < ApplicationController
     redirect_to gifts_path
   end
 
-  def destroy
-  end
 end

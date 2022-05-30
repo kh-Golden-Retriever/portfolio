@@ -37,11 +37,11 @@
       </div>
     </div>
   </div>
-  <div>
-    <%= link_to '編集する', edit_gift_path(gift), class:"btn btn-outline-wine-red mt-3 px-4" %>
-  </div>
-  <div class="mt-5">
+  <div class="mt-3 text-center">
     <% if @current_user == gift.user%>
+      <div>
+        <%= link_to '編集する', edit_gift_path(gift), class:"btn btn-outline-wine-red mb-5 px-4" %>
+      </div>
       <% if gift.done_deal  %>
         <%= link_to "#{gift.gifted_user.name}さんとの取引を取り消す", gift_done_deals_path(gift), method: :delete, data:{confirm: "本当に取り消しますか？"}, class:"btn btn-fill-wine-red mt-3 px-4" %>
       <% elsif %>

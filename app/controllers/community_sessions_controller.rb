@@ -8,7 +8,7 @@ class CommunitySessionsController < ApplicationController
   def create
     @community = Community.find(params[:id])
     session[:community_id] = @community.id
-    redirect_to gifts_path
+    redirect_to gifts_path, success: "#{@community.name}に参加しました"
   end
 
 end

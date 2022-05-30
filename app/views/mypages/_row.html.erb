@@ -6,7 +6,11 @@
     <% end %>
   </td>
   <td><%= gift.title %></td>
-  <td><%= gift.description %></td>
+  <td>
+    <div style="height: 4rem; overflow:auto;">
+      <%= gift.description %>
+    </div>
+  </td>
   <% if gift.done_deal %>
     <td><span class="badge bg-wine-red">sold out</span></td>
   <% elsif gift.status = 'display' %>

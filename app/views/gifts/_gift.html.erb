@@ -13,10 +13,10 @@
       </div>
       <div class="card-body px-4">
         <div class="card-title row g-0 position-relative">
-          <div class="col-10">
+          <div class="col-9">
             <h5><%= gift.title %></h5>
           </div>
-          <div class="position-absolute end-0 bottom-10 col-1">
+          <div class="position-absolute end-0 bottom-10 col-3  text-end">
             <% unless current_user.my_gift?(gift) %>
               <% if current_user.liked?(gift) %>
                 <%= render 'liked_star', gift: gift %>
@@ -28,13 +28,13 @@
         </div>
         <div class="card-text">
           <ul class="list-unstyled">
-            <li class="mb-2" style="height:3rem; overflow:auto;">
+            <li class="mb-1" style="height:3rem; overflow:auto;">
               <%= gift.description %>
             </li>
-            <li class="mb-2 text-end fw-bold">
-              <%= "#{gift.price}円" %>
+            <li class="mb-1 text-end fw-bold fs-5">
+              <%=gift.price %><small class="fs-6">円</small>
             </li>
-            <li class="mb-2">
+            <li>
               <%= link_to  user_path(gift.user),class:"text-decoration-none text-reset row g-0" do %>
                 <div class="col-2">
                   <%= image_tag gift.user.avatar.url, size:'30x30' %>

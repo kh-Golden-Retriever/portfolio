@@ -10,19 +10,23 @@
     </div>
   </div>
   <div class="col-10">
-    <div class="row g-0 outline-light-brown rounded p-1">
-      <div class="col-8">
+    <div class=" outline-light-brown rounded p-1">
+      <div class="">
         <%=comment.content%>
       </div>
-      <div class="col-4">
-        <div>
+      <div class="row g-0 text-end small align-items-end">
+        <div class="small text-muted offset-6 col-4">
           <%=comment.decorate.created_at%>
         </div>
-        <div>
-          <%= link_to 'delete', gift_comment_path(gift, comment), method: :delete, remote: true, data: {confirm: 'delete?'} %>
+        <div class="small col-1">
+          <%= link_to gift_comment_path(gift, comment), method: :delete, remote: true, data: {confirm: 'delete?'} do%>
+            <i class="fa fa-trash light-brown" aria-hidden="true"></i>
+          <% end %>
         </div>
-        <div>
-          <%= link_to 'edit', edit_gift_comment_path(gift, comment), remote: true %>
+        <div class="small col-1">
+          <%= link_to edit_gift_comment_path(gift, comment), remote: true do%>
+            <i class="fas fa-edit light-brown" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ class CommentDecorator < ApplicationDecorator
   #
     def created_at
       # helpers.content_tag :span, class: 'time' do
-        object.created_at.strftime("%y/%-m/%-d %H:%M")
+        object.created_at.strftime("%Y/%-m/%-d %H:%M")
       # end
     end
 

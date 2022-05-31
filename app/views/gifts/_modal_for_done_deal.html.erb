@@ -14,7 +14,7 @@
         <div class="">
           <%= form_with url: gift_done_deals_path(gift), local: true do |f|%>
             <div class="row g-0 py-1" id="js-done-deal-modal" style="">
-              <%= f.collection_select :user_id, User.all.map{ |user| [user.name, user.id] },:second,:first,{},{class: 'offset-2 col-8 outline-light-brown p-1 '} %>
+              <%= f.collection_select :user_id, @current_community.users.all.map{ |user| [user.name, user.id] },:second,:first,{},{class: 'offset-2 col-8 outline-light-brown p-1 '} %>
             </div>
           </div>
         </div>

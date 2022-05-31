@@ -40,7 +40,7 @@ class InvitationsController < ApplicationController
     end
 
   end
-  
+
 
   private
 

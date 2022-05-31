@@ -1,23 +1,28 @@
 <div class="container">
   <div class="mt-5 mb-4">
-    <nav class="navbar nav-tabs pb-0">
-      <ul class="nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <ul class="list-unstyled">
-        <li class="nav-item">
-          <%= render 'shared/gift_search_form', url: gifts_path %>
-        </li>
-      </ul>
-    </nav>
+    <ul class="nav nav-pills row g-0 text-center align-items-center">
+      <li class="nav-item offset-2 col text-reset text-decoration-none">
+        <%= sort_link(@q, :title, 'Gift名',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col">
+        <%= sort_link(@q, :user_name, '出品者',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col">
+        <%= sort_link(@q, :created_at, '作成日',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col">
+        <%= sort_link(@q, :comment_ct, 'コメント数',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col">
+        <%= sort_link(@q, :like_ct, 'いいね数',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col">
+        <%= sort_link(@q, :done_deal, 'sold out',{},{class:"brown text-decoration-none"})%>
+      </li>
+      <li class="nav-item col-3">
+        <%= render 'shared/gift_search_form', url: gifts_path, class:"nav-link" %>
+      </li>
+    </ul>
   </div>
   <div class="row g-4">
     <% if @gifts.present? %>

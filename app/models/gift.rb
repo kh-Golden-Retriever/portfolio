@@ -18,4 +18,13 @@ class Gift < ApplicationRecord
 
   enum status: { undisplay:0, display:1 }
 
+  # left outer join なので0と1が同じ1としてカウントされている。
+  scope :sort_by_comment_ct_asc, ->{ left_joins(:comments).group(:id).order('count(*) asc')}
+  scope :sort_by_comment_ct_desc, ->{ left_joins(:comments).group(:id).order('count(*) desc')}
+  scope :sort_by_like_ct_asc, ->{ left_joins(:likes).group(:id).order('count(*) asc')}
+  scope :sort_by_like_ct_desc, ->{ left_joins(:likes).group(:id).order('count(*) desc')}
+  
+  scope :sort_by_done_deal_asc, ->{ includes(:done_deal).order('done_deals.created_at asc')}
+  scope :sort_by_done_deal_desc, ->{ includes(:done_deal).order('done_deals.created_at desc')}
+
 end
